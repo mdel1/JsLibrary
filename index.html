@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Glide -->
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <!-- Animate on Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <!-- Lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <!-- canvas -->
+    <script src="granim.min.js"></script>
+    <!-- Style.css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Furniture Kingdom</title>
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1 class="logo">Furniture Kingdom</h1>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#gallery">Products</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+</header>
+<!-- Hero Gradient -->
+
+<!-- Hero with glider -->
+<section  id="hero" class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Furniture Kingdom</h1>
+        <p>Discover our wide range of high-quality furniture for every room in your home.</p>
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide"> <img src="/assests/imgs/bed1.jpeg" alt="Slide 1"></li>
+                    <li class="glide__slide"> <img src="/assests/imgs/bed2.jpeg" alt="Slide 2"> </li>
+                    <li class="glide__slide"> <img src="/assests/imgs/bed3.jpeg" alt="Slide 3"> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- AOS -->
+<section id="gallery" class="gallery">
+    <div class="container">
+        <!-- Item 1 -->
+        <div class="item Grey" data-aos="fade-up">
+            <div class="image">
+                <img src="/assests/imgs/greychair.jpeg" alt="Grey Chair" class="lightbox-trigger">
+                <div class="overlay"></div>
+            </div>
+            <div class="text">
+                <h3>Grey Chair</h3>
+                <p>Elegant grey chair, a timeless addition to any modern living space.</p>
+        </div>
+            </div>
+            <!-- Item 2 -->
+        <div class="item Couch" data-aos="fade-up">
+            <div class="image">
+                <img src="/assests/imgs/yellowcouch.jpeg" alt="Yellow Couch" class="lightbox-trigger">
+                <div class="overlay"></div>
+            </div>
+            <div class="text">
+                <h3> Yellow Couch</h3>
+                <p>Vibrant yellow couch, a statement piece for adding a pop of color to your home.</p>
+            </div>
+        </div>
+            <!-- Item 3 -->
+        <div class="item Chair" data-aos="fade-up">
+            <div class="image">
+                <img src="/assests/imgs/pinkchair.jpeg" alt="Pink Chair" class="lightbox-trigger">
+                <div class="overlay"></div>
+            </div>
+            <div class="text">
+                <h3>Pink Chair</h3>
+                <p>Elegant pink chair, a delightful addition to any room in your home.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Row 2 -->
+
+<section class="gallery">
+    <div class="container">
+        <!-- Item 1 -->
+        <div class="item Lamp1" data-aos="fade-up">
+            <div class="image">
+                <img src="/assests/imgs/Lamp.jpeg" alt="Fancy Lamp" class="lightbox-trigger">
+                <div class="overlay"></div>
+            </div>
+            <div class="text">
+                <h3>Fancy Lamp</h3>
+                <p>Indulge in sophistication with our exquisite brass-finished lamp</p>
+        </div>
+            </div>
+            <!-- Item 2 -->
+        <div class="item Lamp2" data-aos="fade-up">
+            <div class="image">
+                <img src="/assests/imgs/M01104003005.jpg" alt="Big Lamp" class="lightbox-trigger">
+                <div class="overlay"></div>
+            </div>
+            <div class="text">
+                <h3> Big Lamp</h3>
+                <p>Presenting our exquisite table lamp, featuring a grand design with a sturdy base and a sleek silhouette.</p>
+            </div>
+        </div>
+            <!-- Item 3 -->
+        <div class="item Lamp3" data-aos="fade-up">
+            <div class="image">
+                <img src="/assests/imgs/polar-table-lamp.jpg" alt="White Lamp" class="lightbox-trigger">
+                <div class="overlay"></div>
+            </div>
+            <div class="text">
+                <h3>Simple White Lamp</h3>
+                <p>Minimalist white table lamp, a perfect blend of simplicity and sophistication.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="gradient-footer">
+  <!-- Canvas gradient -->
+  <canvas id="granim-canvas"></canvas>
+
+</footer>
+<!-- AOS JavaScript -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init();
+    });
+</script>
+<!-- JavaScript to initialize Algolia Places -->
+<script>
+    var placesAutocomplete = places({
+        container: document.querySelector('#location-input'),
+    });
+</script>
+<!-- Choreographer.js Library -->
+<script src="node_modules/choreographer-js/dist/choreographer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script src="https://cdn.jsdelivr.net/npm/granim@2.0.0/dist/granim.min.js"></script>
+<!-- <script>
+    const granimInstance = new Granim({
+        element: '#gradient-footer',
+        direction: 'left-right', // Customize gradient direction as needed
+        states: {
+            "default-state": {
+                gradients: [
+                    ['#ff9966', '#ff5e62'],
+                    ['#00F260', '#0575E6'],
+                    ['#1e3c72', '#2a5298']
+                ]
+            }
+        }
+    });
+</script> -->
+<script src="granim.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
+

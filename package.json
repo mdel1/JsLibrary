@@ -1,0 +1,21 @@
+{
+  "name": "inm420-JSLibrary",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "author": "Marina Dela Paz",
+  "license": "private",
+  "private": true,
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.6.0",
+    "animejs": "^3.2.2",
+    "aos": "^3.0.0-beta.6",
+    "choreographer-js": "^1.1.0",
+    "granim": "^2.0.0"
+  }
+}
